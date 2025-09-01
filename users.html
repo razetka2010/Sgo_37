@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользователи | Сетевой Город</title>
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Боковая панель -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Сетевой Город</span>
+            </div>
+            <p>Панель администратора</p>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="admin.html"><i class="fas fa-home"></i> Главная</a></li>
+                <li class="active"><a href="users.html"><i class="fas fa-users"></i> Пользователи</a></li>
+                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Учителя</a></li>
+                <li><a href="#"><i class="fas fa-user-graduate"></i> Ученики</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Предметы</a></li>
+                <li><a href="#"><i class="fas fa-calendar"></i> Расписание</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Отчеты</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <span class="user-name">Администратор</span>
+                    <span class="user-role">Системный администратор</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Шапка -->
+        <header class="content-header">
+            <div class="header-left">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Управление пользователями</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск пользователей..." id="searchInput">
+                </div>
+                <button class="btn btn-primary">
+                    <i class="fas fa-user-plus"></i>
+                    Добавить пользователя
+                </button>
+            </div>
+        </header>
+
+        <!-- Фильтры и статистика -->
+        <section class="filters-section">
+            <div class="section-header">
+                <h2>Фильтры и статистика</h2>
+                <span class="section-subtitle">Управление пользователями системы</span>
+            </div>
+            
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label>Роль пользователя</label>
+                    <select id="roleFilter">
+                        <option value="all">Все роли</option>
+                        <option value="Администратор">Администратор</option>
+                        <option value="Учитель">Учитель</option>
+                        <option value="Ученик">Ученик</option>
+                        <option value="Родитель">Родитель</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Статус аккаунта</label>
+                    <select id="statusFilter">
+                        <option value="all">Все статусы</option>
+                        <option value="active">Активные</option>
+                        <option value="inactive">Неактивные</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Класс</label>
+                    <select id="classFilter">
+                        <option value="all">Все классы</option>
+                        <option value="10-А">10-А</option>
+                        <option value="10-Б">10-Б</option>
+                        <option value="11-А">11-А</option>
+                        <option value="11-Б">11-Б</option>
+                        <option value="-">-</option>
+                    </select>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn btn-secondary">
+                        <i class="fas fa-filter"></i>
+                        Применить фильтры
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-sync"></i>
+                        Сбросить
+                    </button>
+                </div>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,247</h3>
+                        <p>Всего пользователей</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>58</h3>
+                        <p>Учителей</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,134</h3>
+                        <p>Учеников</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>55</h3>
+                        <p>Родителей</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Таблица пользователей -->
+        <section class="table-section">
+            <div class="section-header">
+                <div class="header-content">
+                    <h2>Список пользователей</h2>
+                    <span class="table-info">Показано <strong>1-5</strong> из 3 пользователей</span>
+                </div>
+                <div class="header-actions">
+                    <button class="btn btn-outline">
+                        <i class="fas fa-download"></i>
+                        Экспорт
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="fas fa-trash"></i>
+                        Удалить
+                    </button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table class="users-table">
+                    <thead>
+                        <tr>
+                            <th class="checkbox-cell">
+                                <input type="checkbox" id="selectAll">
+                            </th>
+                            <th>ФИО</th>
+                            <th>Логин</th>
+                            <th>Роль</th>
+                            <th>Класс</th>
+                            <th>Email</th>
+                            <th>Статус</th>
+                            <th>Последняя активность</th>
+                            <th class="actions-cell">Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                        <tr>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" class="user-checkbox" data-id="1">
+                            </td>
+                            <td>
+                                <div class="user-info-cell">
+                                    <strong>Иванов Иван Иванович</strong>
+                                    <span class="user-phone">+7 (912) 345-67-89</span>
+                                </div>
+                            </td>
+                            <td>ivanov_i</td>
+                            <td>
+                                <span class="role-badge role-student">Ученик</span>
+                            </td>
+                            <td>10-А</td>
+                            <td>
+                                <a href="mailto:ivanov@school.ru" class="email-link">ivanov@school.ru</a>
+                            </td>
+                            <td>
+                                <span class="status-badge status-active">Активный</span>
+                            </td>
+                            <td>15.01.2024 14:30</td>
+                            <td class="actions-cell">
+                                <div class="table-actions">
+                                    <button class="action-btn view" data-id="1" title="Просмотр">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn edit" data-id="1" title="Редактировать">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-id="1" title="Удалить">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" class="user-checkbox" data-id="2">
+                            </td>
+                            <td>
+                                <div class="user-info-cell">
+                                    <strong>Петрова Анна Сергеевна</strong>
+                                    <span class="user-phone">+7 (923) 456-78-90</span>
+                                </div>
+                            </td>
+                            <td>petrova_a</td>
+                            <td>
+                                <span class="role-badge role-teacher">Учитель</span>
+                            </td>
+                            <td>-</td>
+                            <td>
+                                <a href="mailto:petrova@school.ru" class="email-link">petrova@school.ru</a>
+                            </td>
+                            <td>
+                                <span class="status-badge status-active">Активный</span>
+                            </td>
+                            <td>15.01.2024 13:45</td>
+                            <td class="actions-cell">
+                                <div class="table-actions">
+                                    <button class="action-btn view" data-id="2" title="Просмотр">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn edit" data-id="2" title="Редактировать">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-id="2" title="Удалить">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="checkbox-cell">
+                                <input type="checkbox" class="user-checkbox" data-id="3">
+                            </td>
+                            <td>
+                                <div class="user-info-cell">
+                                    <strong>Сидоров Алексей Петрович</strong>
+                                    <span class="user-phone">+7 (934) 567-89-01</span>
+                                </div>
+                            </td>
+                            <td>sidorov_a</td>
+                            <td>
+                                <span class="role-badge role-student">Ученик</span>
+                            </td>
+                            <td>10-Б</td>
+                            <td>
+                                <a href="mailto:sidorov@school.ru" class="email-link">sidorov@school.ru</a>
+                            </td>
+                            <td>
+                                <span class="status-badge status-inactive">Неактивный</span>
+                            </td>
+                            <td>14.01.2024 10:20</td>
+                            <td class="actions-cell">
+                                <div class="table-actions">
+                                    <button class="action-btn view" data-id="3" title="Просмотр">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="action-btn edit" data-id="3" title="Редактировать">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="action-btn delete" data-id="3" title="Удалить">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination">
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="page-numbers">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                </div>
+                <button class="pagination-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Модальное окно добавления/редактирования пользователя -->
+        <div class="modal" id="addUserModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Добавление пользователя</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="addUserForm" class="user-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <input type="text" name="lastName" placeholder="Фамилия *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="firstName" placeholder="Имя *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="middleName" placeholder="Отчество">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="login" placeholder="Логин *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" placeholder="Пароль *" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Телефон">
+                            </div>
+                            <div class="form-group">
+                                <select name="role" required>
+                                    <option value="">Выберите роль *</option>
+                                    <option value="Ученик">Ученик</option>
+                                    <option value="Учитель">Учитель</option>
+                                    <option value="Родитель">Родитель</option>
+                                    <option value="Администратор">Администратор</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select name="class">
+                                    <option value="">Выберите класс</option>
+                                    <option value="10-А">10-А</option>
+                                    <option value="10-Б">10-Б</option>
+                                    <option value="11-А">11-А</option>
+                                    <option value="11-Б">11-Б</option>
+                                    <option value="-">-</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-outline">Отмена</button>
+                            <button type="submit" class="btn btn-primary">Добавить пользователя</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальное окно просмотра пользователя -->
+        <div class="modal" id="userDetailsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Просмотр пользователя</h3>
+                    <button class="modal-close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="user-details-grid">
+                        <div class="detail-item">
+                            <label>ФИО:</label>
+                            <span id="detailName">Иванов Иван Иванович</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Логин:</label>
+                            <span id="detailLogin">ivanov_i</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Роль:</label>
+                            <span id="detailRole">Ученик</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Класс:</label>
+                            <span id="detailClass">10-А</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Email:</label>
+                            <span id="detailEmail">ivanov@school.ru</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Телефон:</label>
+                            <span id="detailPhone">+7 (912) 345-67-89</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Статус:</label>
+                            <span id="detailStatus">Активный</span>
+                        </div>
+                        <div class="detail-item">
+                            <label>Последняя активность:</label>
+                            <span id="detailLastActivity">15.01.2024 14:30</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="closeDetails">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="users.js"></script>
+</body>
+</html>

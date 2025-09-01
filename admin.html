@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная панель | Сетевой Город</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Боковая панель -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Сетевой Город</span>
+            </div>
+            <p>Панель администратора</p>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="users.html"><i class="fas fa-users"></i> Пользователи</a></li>
+                <li><a href="#"><i class="fas fa-chalkboard-teacher"></i> Учителя</a></li>
+                <li><a href="#"><i class="fas fa-user-graduate"></i> Ученики</a></li>
+                <li><a href="#"><i class="fas fa-book"></i> Предметы</a></li>
+                <li><a href="#"><i class="fas fa-calendar"></i> Расписание</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Отчеты</a></li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <span class="user-name">Администратор</span>
+                    <span class="user-role">Системный администратор</span>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <!-- Шапка -->
+        <header class="content-header">
+            <div class="header-left">
+                <button class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1>Главная панель</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Поиск...">
+                </div>
+                <div class="header-actions">
+                    <button class="notification-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-count">3</span>
+                    </button>
+                    <button class="profile-btn">
+                        <i class="fas fa-user"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Статистика -->
+        <section class="stats-section">
+            <div class="section-header">
+                <h2>Общая статистика</h2>
+                <span class="section-subtitle">Обзор системы за последние 30 дней</span>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,247</h3>
+                        <p>Всего пользователей</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+12%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>58</h3>
+                        <p>Учителей</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+4%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,189</h3>
+                        <p>Учеников</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+6%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>42</h3>
+                        <p>Класса</p>
+                        <div class="stat-trend positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>+24%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Основные виджеты -->
+        <section class="dashboard-grid">
+            <!-- Последние действия -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Последние действия</h3>
+                    <button class="widget-action">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+                <div class="widget-content">
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Новый пользователь зарегистрирован</p>
+                                <span class="activity-time">2 минуты назад</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Оценки обновлены для 10-Б класса</p>
+                                <span class="activity-time">15 минут назад</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Расписание изменено</p>
+                                <span class="activity-time">1 час назад</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p class="activity-title">Системное обновление завершено</p>
+                                <span class="activity-time">3 часа назад</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Быстрое управление -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Быстрое управление</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="quick-actions-grid">
+                        <button class="quick-action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <span>Добавить пользователя</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-calendar"></i>
+                            </div>
+                            <span>Редактировать расписание</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>Массовая рассылка</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <span>Управление предметами</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <span>Создать отчет</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <div class="action-icon">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <span>Экспорт данных</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Активность за неделю -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Активность за неделю</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="activity-chart">
+                        <div class="chart-bars">
+                            <div class="chart-bar" style="height: 70%">
+                                <span class="chart-label">Пн</span>
+                            </div>
+                            <div class="chart-bar" style="height: 50%">
+                                <span class="chart-label">Вт</span>
+                            </div>
+                            <div class="chart-bar" style="height: 85%">
+                                <span class="chart-label">Ср</span>
+                            </div>
+                            <div class="chart-bar" style="height: 65%">
+                                <span class="chart-label">Чт</span>
+                            </div>
+                            <div class="chart-bar" style="height: 90%">
+                                <span class="chart-label">Пт</span>
+                            </div>
+                            <div class="chart-bar" style="height: 40%">
+                                <span class="chart-label">Сб</span>
+                            </div>
+                            <div class="chart-bar" style="height: 20%">
+                                <span class="chart-label">Вс</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Статус системы -->
+            <div class="widget">
+                <div class="widget-header">
+                    <h3>Статус системы</h3>
+                </div>
+                <div class="widget-content">
+                    <div class="status-list">
+                        <div class="status-item">
+                            <div class="status-indicator online"></div>
+                            <div class="status-info">
+                                <span class="status-name">Веб-сервер</span>
+                                <span class="status-value">Online</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-indicator online"></div>
+                            <div class="status-info">
+                                <span class="status-name">База данных</span>
+                                <span class="status-value">Online</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-indicator warning"></div>
+                            <div class="status-info">
+                                <span class="status-name">Почтовый сервер</span>
+                                <span class="status-value">Задержка</span>
+                            </div>
+                        </div>
+                        <div class="status-item">
+                            <div class="status-indicator online"></div>
+                            <div class="status-info">
+                                <span class="status-name">Резервное копирование</span>
+                                <span class="status-value">Активно</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>

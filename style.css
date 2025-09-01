@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #4a5699, #6a3093);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Плавающие геометрические фигуры на фоне */
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(50px);
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+    animation: float1 20s ease-in-out infinite;
+    top: -100px;
+    left: -100px;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(45deg, #4ecdc4, #44a08d);
+    animation: float2 25s ease-in-out infinite;
+    bottom: -150px;
+    right: -100px;
+}
+
+.shape-3 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    animation: float3 18s ease-in-out infinite;
+    top: 50%;
+    left: 70%;
+}
+
+.shape-4 {
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(45deg, #f093fb, #f5576c);
+    animation: float4 22s ease-in-out infinite;
+    bottom: 30%;
+    left: 10%;
+}
+
+@keyframes float1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(80px, 120px) rotate(120deg); }
+    66% { transform: translate(-60px, 80px) rotate(240deg); }
+}
+
+@keyframes float2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-100px, -80px) rotate(-120deg); }
+    66% { transform: translate(70px, -120px) rotate(-240deg); }
+}
+
+@keyframes float3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(60px, -80px) scale(1.3); }
+    66% { transform: translate(-40px, 60px) scale(0.8); }
+}
+
+@keyframes float4 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-120px, 60px) rotate(180deg); }
+    66% { transform: translate(90px, -40px) rotate(300deg); }
+}
+
+/* Частицы */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Основной контейнер формы */
+.login-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+/* Карточка с формой */
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: cardAppear 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes cardAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Заголовок */
+.login-card h1 {
+    color: #2d3748;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.login-card h1 i {
+    margin-right: 12px;
+    color: #667eea;
+    text-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+.subtitle {
+    color: #718096;
+    margin-bottom: 35px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Стили для групп полей ввода */
+.input-group {
+    position: relative;
+    margin-bottom: 35px;
+    text-align: left;
+}
+
+.input-icon {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    color: #a0aec0;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 16px 16px 45px;
+    border: none;
+    border-bottom: 2px solid #e2e8f0;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    color: #2d3748;
+    position: relative;
+    z-index: 2;
+}
+
+.input-group input:focus {
+    border-color: transparent;
+}
+
+.input-group label {
+    position: absolute;
+    top: 16px;
+    left: 45px;
+    color: #a0aec0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    transition: width 0.4s ease;
+    z-index: 2;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 16px;
+    right: 12px;
+    color: #a0aec0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 2;
+}
+
+.toggle-password:hover {
+    color: #667eea;
+}
+
+/* Анимации для полей ввода при фокусе */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -20px;
+    left: 40px;
+    font-size: 0.85rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.input-group input:focus ~ .input-icon,
+.input-group input:valid ~ .input-icon {
+    color: #667eea;
+    transform: scale(1.1);
+}
+
+.input-group input:focus ~ .underline {
+    width: 100%;
+}
+
+/* Стили для кнопки */
+.login-btn {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(118, 75, 162, 0.4);
+    margin-top: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.login-btn:hover::before {
+    left: 100%;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(118, 75, 162, 0.6);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.login-btn i {
+    transition: transform 0.3s ease;
+}
+
+.login-btn:hover i {
+    transform: translateX(5px);
+}
+
+/* Ссылки под формой */
+.links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.links a {
+    color: #667eea;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+.links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #667eea;
+    transition: width 0.3s ease;
+}
+
+.links a:hover {
+    color: #764ba2;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+/* Уведомление об ошибке */
+.notification {
+    position: absolute;
+    bottom: -70px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff4757 100%);
+    color: white;
+    padding: 18px 30px;
+    border-radius: 12px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    box-shadow: 0 8px 25px rgba(255, 71, 87, 0.3);
+    text-align: center;
+    font-weight: 500;
+}
+
+.notification.show {
+    opacity: 1;
+    bottom: -60px;
+}
+
+/* Анимация тряски при ошибке */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+.login-card.error {
+    animation: shake 0.6s ease;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 500px) {
+    .login-card {
+        padding: 30px 25px;
+        margin: 0 15px;
+    }
+    
+    .login-card h1 {
+        font-size: 1.8rem;
+    }
+    
+    .input-group input {
+        padding: 14px 14px 14px 40px;
+    }
+    
+    .shape {
+        filter: blur(30px);
+    }
+    
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .shape-4 {
+        width: 200px;
+        height: 200px;
+    }
+}

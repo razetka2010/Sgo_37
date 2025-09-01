@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сетевой Город | Вход в систему</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Анимированный фон с градиентом -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    
+    <!-- Частицы -->
+    <div id="particles-js"></div>
+    
+    <!-- Основной контейнер -->
+    <div class="login-container">
+        <div class="login-card">
+            <h1><i class="fas fa-graduation-cap"></i> Сетевой Город</h1>
+            <p class="subtitle">Введите ваши данные для входа</p>
+
+            <form class="login-form">
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="username" required autocomplete="off">
+                    <label for="username">Логин</label>
+                    <div class="underline"></div>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" required autocomplete="off">
+                    <label for="password">Пароль</label>
+                    <div class="underline"></div>
+                    <i class="fas fa-eye-slash toggle-password"></i>
+                </div>
+
+                <button type="submit" class="login-btn">
+                    <span>Войти</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="links">
+                <a href="#">Техническая поддержка</a>
+            </div>
+        </div>
+
+        <div class="notification" id="notification">
+            Неверный логин или пароль.
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
